@@ -9,12 +9,12 @@ import 'react-native-gesture-handler';
 
 
 
-const Signup = ({navigation}) => {
+const SignUp = ({navigation}) => {
     const [id, setId] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');
     const [name, setName] = React.useState('');
-    const [phoneNum, setPhoneNum] = React.useState('');
+    const [address, setAddress] = React.useState('');
     const [num, setNum] = React.useState('');
     const [errorMessage, setErrorMessage] = React.useState('');
 
@@ -33,7 +33,7 @@ const Signup = ({navigation}) => {
         }
     }
 
-    const checkPhoneNum = (e) => {
+    const checkAddress = (e) => {
         setVisible(true);
     }
     
@@ -49,8 +49,8 @@ const Signup = ({navigation}) => {
         setName(e);
     }
 
-    const InputPhoneNum = (e) => {
-        setPhoneNum(e);
+    const InputAddress = (e) => {
+        setAddress(e);
     }
 
     const InputNum = (e) =>{
@@ -114,13 +114,13 @@ const Signup = ({navigation}) => {
         <TextInput style={styles.textInput}
             placeholder="Phone Number"
             maxLength={50}
-            onChangeText={InputPhoneNum}
-            value={phoneNum}
+            onChangeText={InputAddress}
+            value={address}
         >
         </TextInput>
 
-        <TouchableOpacity onPress={checkPhoneNum} style={styles.button}>
-            <Text style={styles.buttonText}>번호 인증</Text>
+        <TouchableOpacity onPress={checkAddress} style={styles.button}>
+            <Text style={styles.buttonText}>동네 인증</Text>
         </TouchableOpacity>
 
         {visible && <TextInput style={styles.textInput}
@@ -183,4 +183,4 @@ const styles = StyleSheet.create({
   } 
 });
 
-export default Signup;
+export default SignUp;
