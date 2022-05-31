@@ -1,11 +1,12 @@
 import React, { useState }  from 'react';
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
-import { theme } from './theme';
+import {theme} from "./theme";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen  from './Login';
-import SignupScreen from './SignUp'; 
+import LoginScreen  from './screen/Login';
+import SignupScreen from './screen/SignUp';
+import MainScreen from './screen/Main'; 
 
 
 const Stack = createStackNavigator();
@@ -27,6 +28,11 @@ const App = () => {
                     name="SignUp"
                     component={SignupScreen}
                     options={{ title: 'SignUp'}}
+                    />
+                    <Stack.Screen
+                    name="Main"
+                    component={MainScreen}
+                    options={{ title: 'Main'}}
                     />
                 </Stack.Navigator>
             </NavigationContainer>

@@ -4,7 +4,7 @@ import { TextInput } from 'react-native';
 import styled from 'styled-components/native';
 import { ThemeProvider } from 'styled-components';
 import React, { useState, useEffect} from 'react';
-import {theme} from './theme';
+import {theme} from '../theme';
 import 'react-native-gesture-handler';
 
 const Main = () => {

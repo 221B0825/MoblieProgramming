@@ -4,9 +4,8 @@ import { TextInput } from 'react-native';
 import styled from 'styled-components/native';
 import { ThemeProvider } from 'styled-components';
 import React, { useState, useEffect} from 'react';
-import {theme} from './theme';
+import {theme} from '../theme';
 import 'react-native-gesture-handler';
-import MainScreen from './Main';
 
 
 
@@ -31,8 +30,9 @@ const Login = ({navigation}) => {
 
   // login 버튼을 눌렀을 경우
   const login = (e) => {
-    //id와 password 둘 다 값이 존재하면
+    //id와 password 둘 다 값이 존재하면 login success
     setErrorMessage(id && password ? 'login success' : 'login fail')
+    navigation.navigate('Main');
   }
 
   const signUp = () => {
