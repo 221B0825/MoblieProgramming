@@ -9,6 +9,7 @@ import 'react-native-gesture-handler';
 
 
 
+
 const Login = ({navigation}) => {
 
   const [id, setId] = React.useState('');
@@ -28,10 +29,11 @@ const Login = ({navigation}) => {
     setPassword(e);
   }
 
-  // login 버튼을 눌렀을 경우
+  // Press loginButton
   const login = (e) => {
-    //id와 password 둘 다 값이 존재하면 login success
+    //excist id & password --> login success
     setErrorMessage(id && password ? 'login success' : 'login fail')
+    // Move to DrawNavigator
     navigation.navigate('Main');
   }
 
