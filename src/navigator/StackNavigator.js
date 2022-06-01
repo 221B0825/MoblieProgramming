@@ -1,9 +1,13 @@
+//basic
 import React from "react";
+
+//navigation
 import { createStackNavigator } from "@react-navigation/stack";
 import DrawerNavigator from "./DrawNavigator";
 
-import LoginScreen from "./screen/Login";
-import SignupScreen from "./screen/SignUp";
+//screens
+import LoginScreen from "../screen/Login";
+import SignupScreen from "../screen/SignUp";
 
 const Stack = createStackNavigator();
 
@@ -15,17 +19,25 @@ const StackNavigator = () => {
         <Stack.Screen
           name="Login"
           component={LoginScreen}
-          options={{ title: 'Welcome'}}
+          options={{
+            title: '',
+          }}
           />
         <Stack.Screen
           name="SignUp"
           component={SignupScreen}
-          options={{ title: 'SignUp'}}
+          options={{ 
+            title: 'SignUp',
+            headerShown: true
+          }}
           />
         <Stack.Screen
           name="Main"
           component={DrawerNavigator}
-          options={{ title: 'Main'}}
+          options={{
+            title: 'Main',
+            
+          }}
           />
     </Stack.Navigator>
   );

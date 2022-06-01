@@ -1,5 +1,8 @@
+//basic
 import React from 'react';
 import {View, StyleSheet, FlatList, Text, SafeAreaView, ScrollView, StatusBar } from 'react-native';
+
+//navigation
 import 'react-native-gesture-handler';
 
 const DATA = [
@@ -46,15 +49,16 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       marginTop: StatusBar.currentHeight || 0,
+      backgroundColor: '#ffffff',
     },
 
-    scrollView: {
-        backgroundColor: 'pink',
-        marginHorizontal: 20,
-    },
+    // scrollView: {
+    //     backgroundColor: 'pink',
+    //     marginHorizontal: 20,
+    // },
 
     item: {
-      backgroundColor: '#f9c2ff',
+      backgroundColor: '#F0EDEB',
       padding: 20,
       marginVertical: 8,
       marginHorizontal: 16,

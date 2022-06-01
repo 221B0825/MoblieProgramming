@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import {theme} from "./theme";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StackNavigator } from './StackNavigator';
+import { StackNavigator } from '../src/navigator/StackNavigator';
 
 const Stack = createStackNavigator();
 

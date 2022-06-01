@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import Info from './screen/InfoBoard';
+import Info from '../screen/InfoBoard';
 
 const Drawer = createDrawerNavigator();
 

@@ -1,4 +1,7 @@
-const colors = {
+import styled from 'styled-components/native';
+import StyleSheet from 'react-native';
+
+export const colors = {
     white: '#ffffff',
     black: '#000000',
     red: '#e84118',

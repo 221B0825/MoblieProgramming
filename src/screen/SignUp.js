@@ -1,13 +1,15 @@
+//basic
+import React, { useState, useEffect} from 'react';
+import { Text, TextInput, View, SafeAreaView, TouchableOpacity, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
-import { TextInput } from 'react-native';
+
+//style
 import styled from 'styled-components/native';
 import { ThemeProvider } from 'styled-components';
-import React, { useState, useEffect} from 'react';
 import {theme} from '../theme';
+
+//navigation
 import 'react-native-gesture-handler';
-
-
 
 const SignUp = ({navigation}) => {
     const [id, setId] = React.useState('');
