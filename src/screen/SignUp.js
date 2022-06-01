@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 //style
 import styled from 'styled-components/native';
 import { ThemeProvider } from 'styled-components';
-import {theme} from '../theme';
+import {theme, basicStyle} from '../styles';
 
 //navigation
 import 'react-native-gesture-handler';
@@ -70,10 +70,10 @@ const SignUp = ({navigation}) => {
 
     return (
         <ThemeProvider theme={theme}>
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={basicStyle.container}>
         <StatusBar style="auto" />
 
-        <TextInput style={styles.textInput}
+        <TextInput style={basicStyle.textInput}
             placeholder="ID"
             maxLength={50}
             onChangeText={InputId}
@@ -81,13 +81,13 @@ const SignUp = ({navigation}) => {
         >
         </TextInput>
 
-        <Text style={styles.errorText}>{errorMessage}</Text>
+        <Text style={basicStyle.errorText}>{errorMessage}</Text>
 
-        <TouchableOpacity onPress={checkID} style={styles.button}>
-            <Text style={styles.buttonText}>중복 확인</Text>
+        <TouchableOpacity onPress={checkID} style={basicStyle.button}>
+            <Text style={basicStyle.buttonText}>중복 확인</Text>
         </TouchableOpacity>
 
-        <TextInput style={styles.textInput}
+        <TextInput style={basicStyle.textInput}
             placeholder="Password"
             maxLength={50}
             onChangeText={InputPassword}
@@ -96,7 +96,7 @@ const SignUp = ({navigation}) => {
         >
         </TextInput>
 
-        <TextInput style={styles.textInput}
+        <TextInput style={basicStyle.textInput}
             placeholder="Confirm password"
             maxLength={50}
             onChangeText={InputConfirmPassword}
@@ -105,7 +105,7 @@ const SignUp = ({navigation}) => {
         >
         </TextInput>
 
-        <TextInput style={styles.textInput}
+        <TextInput style={basicStyle.textInput}
             placeholder="Name"
             maxLength={50}
             onChangeText={InputName}
@@ -113,7 +113,7 @@ const SignUp = ({navigation}) => {
         >
         </TextInput>
 
-        <TextInput style={styles.textInput}
+        <TextInput style={basicStyle.textInput}
             placeholder="Phone Number"
             maxLength={50}
             onChangeText={InputAddress}
@@ -121,11 +121,11 @@ const SignUp = ({navigation}) => {
         >
         </TextInput>
 
-        <TouchableOpacity onPress={checkAddress} style={styles.button}>
-            <Text style={styles.buttonText}>동네 인증</Text>
+        <TouchableOpacity onPress={checkAddress} style={basicStyle.button}>
+            <Text style={basicStyle.buttonText}>동네 인증</Text>
         </TouchableOpacity>
 
-        {visible && <TextInput style={styles.textInput}
+        {visible && <TextInput style={basicStyle.textInput}
             placeholder="인증번호"
             maxLength={50}
             onChangeText={InputNum}
@@ -134,55 +134,18 @@ const SignUp = ({navigation}) => {
         </TextInput>}
 
         {visible &&
-        <TouchableOpacity onPress={checkNum} style={styles.button}>
-            <Text style={styles.buttonText}>인증하기</Text>
+        <TouchableOpacity onPress={checkNum} style={basicStyle.button}>
+            <Text style={basicStyle.buttonText}>인증하기</Text>
         </TouchableOpacity>}
 
 
-        {/* <TouchableOpacity onPress={back} style={styles.button}>
-            <Text style={styles.buttonText}>back</Text>
+        {/* <TouchableOpacity onPress={back} style={basicStyle.button}>
+            <Text style={basicStyle.buttonText}>back</Text>
         </TouchableOpacity> */}
 
         </SafeAreaView>
         </ThemeProvider>
     );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textInput: {
-    height: 40,
-    width: 300,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 10,
-  },
-  text: {
-    margin: 30,
-    fontSize: 30
-  },
-  button: {
-    backgroundColor: '#B38D79',
-    margin: 10,
-    padding: 10,
-    width: 100,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 15,
-    color: '#fff',
-  },
-  errorText: {
-    fontSize: 20,
-    color: 'black'
-  } 
-});
 
 export default SignUp;

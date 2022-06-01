@@ -1,9 +1,12 @@
 //basic
 import React from 'react';
-import {View, StyleSheet, FlatList, Text, SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import {View, FlatList, Text, SafeAreaView, StatusBar } from 'react-native';
 
 //navigation
 import 'react-native-gesture-handler';
+
+//style
+import { theme, boardStyle } from '../styles';
 
 const DATA = [
     {
@@ -21,8 +24,8 @@ const DATA = [
   ];
 
   const Item = ({ title }) => (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+    <View style={boardStyle.item}>
+      <Text style={boardStyle.title}>{title}</Text>
     </View>
   );
 
@@ -33,39 +36,14 @@ const InfoBoard = () => {
     )
     
   return (
-    <SafeAreaView style={styles.container}>
-
+    <SafeAreaView style={boardStyle.container}>
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
             />
-       
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      marginTop: StatusBar.currentHeight || 0,
-      backgroundColor: '#ffffff',
-    },
-
-    // scrollView: {
-    //     backgroundColor: 'pink',
-    //     marginHorizontal: 20,
-    // },
-
-    item: {
-      backgroundColor: '#F0EDEB',
-      padding: 20,
-      marginVertical: 8,
-      marginHorizontal: 16,
-    },
-    title: {
-      fontSize: 32,
-    },
-  });
 
 export default InfoBoard;

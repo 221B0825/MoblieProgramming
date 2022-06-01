@@ -1,18 +1,15 @@
 //basic
 import React, { useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Text, TextInput, View, SafeAreaView, TouchableOpacity } from 'react-native';
 
 //style
 import styled from 'styled-components/native';
 import { ThemeProvider } from 'styled-components';
-import {theme} from '../theme';
+import { theme, basicStyle } from '../styles';
 
 //navigation
 import 'react-native-gesture-handler';
-
-
-
 
 const Login = ({navigation}) => {
 
@@ -48,20 +45,20 @@ const Login = ({navigation}) => {
 
   return (
     <ThemeProvider theme={theme}>
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={basicStyle.container}>
       <StatusBar style="auto" />
 
-      <Text style={styles.text}>로그인</Text>
-      <Text style={styles.errorText}>{errorMessage}</Text>
+      <Text style={basicStyle.text}>로그인</Text>
+      <Text style={basicStyle.errorText}>{errorMessage}</Text>
       
-      <TextInput style={styles.textInput}
+      <TextInput style={basicStyle.textInput}
         placeholder="ID"
         maxLength={50}
         onChangeText={InputId}
         value={id}
       >
       </TextInput>
-      <TextInput style={styles.textInput}
+      <TextInput style={basicStyle.textInput}
         placeholder="Password"
         maxLength={50}
         onChangeText={InputPassword}
@@ -69,13 +66,13 @@ const Login = ({navigation}) => {
         secureTextEntry={true}
       >
       </TextInput>
-      <SafeAreaView style={styles.row}>
-        <TouchableOpacity onPress={login} style={styles.button}>
-          <Text style={styles.buttonText}>로그인</Text>
+      <SafeAreaView style={basicStyle.row}>
+        <TouchableOpacity onPress={login} style={basicStyle.button}>
+          <Text style={basicStyle.buttonText}>로그인</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={signUp} style={styles.button}>
-          <Text style={styles.buttonText}>회원가입</Text>
+        <TouchableOpacity onPress={signUp} style={basicStyle.button}>
+          <Text style={basicStyle.buttonText}>회원가입</Text>
         </TouchableOpacity>
       </SafeAreaView>
       
@@ -84,45 +81,5 @@ const Login = ({navigation}) => {
     </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textInput: {
-    height: 40,
-    width: 300,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 10,
-  },
-  text: {
-    margin: 30,
-    fontSize: 30
-  },
-  button: {
-    backgroundColor: '#B38D79',
-    margin: 10,
-    padding: 10,
-    width: 100,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 15,
-    color: '#fff',
-  },
-  errorText: {
-    fontSize: 20,
-    color: 'red'
-  },
-  row : {
-    flexDirection: 'row',
-  } 
-});
 
 export default Login;
