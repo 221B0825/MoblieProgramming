@@ -74,7 +74,7 @@ const ProfileStackNavigator = () => {
         name="Withdrawal"
         component={WithdrawalScreen} 
         options={{
-          title: "",
+          title: "회원 탈퇴",
           headerShown: true,
         }}
 

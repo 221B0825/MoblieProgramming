@@ -17,7 +17,6 @@ const Withdrawal =({navigation}) => {
 
     return(
         <SafeAreaView style={basicStyle.container}>
-            <Text style={basicStyle.text}>회원 탈퇴</Text>
             <Text style={[basicStyle.errorText, {fontSize: 30}]}>&lt;주의&gt;</Text>
             <ScrollView>
             <Text style={basicStyle.text}>사용자 탈퇴 시,해당 아이디는 재사용 및 복구할 수 없으며,
