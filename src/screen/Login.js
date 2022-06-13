@@ -1,10 +1,8 @@
 //basic
 import React, { useState, useEffect} from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, TextInput, View, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Text, TextInput, View, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native';
 
 //style
-import styled from 'styled-components/native';
 import { ThemeProvider } from 'styled-components';
 import { theme, basicStyle } from '../styles';
 
@@ -13,16 +11,15 @@ import 'react-native-gesture-handler';
 
 const Login = ({navigation}) => {
 
-  const [id, setId] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [errorMessage, setErrorMessage] = React.useState('');
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginErrorMessage, setLoginErrorMessage] = useState('');
 
   useEffect(() => {
-    setErrorMessage('');
+    setLoginErrorMessage('');
   },[id]);
 
   const InputId = (e) => {
-    console.log(e)
     setId(e);
   }
 
@@ -33,13 +30,16 @@ const Login = ({navigation}) => {
   // Press loginButton
   const login = (e) => {
     //excist id & password --> login success
-    setErrorMessage(id && password ? 'login success' : 'login fail')
-    // Move to DrawNavigator
-    navigation.navigate('Main');
+    if(id && password){
+      setLoginErrorMessage('');
+      navigation.navigate('Main');
+    }else{
+      setLoginErrorMessage('로그인 실패: ID 또는 PW가 일치하지 않습니다.');
+    }
   }
 
   const signUp = () => {
-    setErrorMessage('');
+    setLoginErrorMessage('');
     navigation.navigate('SignUp');
   }
 
@@ -49,7 +49,7 @@ const Login = ({navigation}) => {
       <StatusBar style="auto" />
 
       <Text style={basicStyle.text}>로그인</Text>
-      <Text style={basicStyle.errorText}>{errorMessage}</Text>
+      <Text style={basicStyle.errorText}>{loginErrorMessage}</Text>
       
       <TextInput style={basicStyle.textInput}
         placeholder="ID"

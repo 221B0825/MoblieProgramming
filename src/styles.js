@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
-import { color } from 'react-native-reanimated';
+import Styled from 'styled-components';
 
 export const colors = {
   white: '#ffffff',
@@ -29,19 +29,19 @@ export const basicStyle = StyleSheet.create({
       height: 40,
       width: 300,
       margin: 12,
-      borderWidth: 1,
       padding: 10,
       borderRadius: 10,
+      backgroundColor: colors.inputText,
     },
     text: {
-      margin: 30,
-      fontSize: 30
+      margin: 20,
+      fontSize: 25,
     },
     button: {
       backgroundColor: colors.button_accessible,
       margin: 10,
       padding: 10,
-      width: 100,
+      paddingHorizontal: 40,
       borderRadius: 5,
       alignItems: 'center',
     },
@@ -50,7 +50,7 @@ export const basicStyle = StyleSheet.create({
       color: colors.white,
     },
     errorText: {
-      fontSize: 20,
+      fontSize: 15,
       color: colors.red,
     },
     row : {
@@ -60,13 +60,12 @@ export const basicStyle = StyleSheet.create({
 
 export const boardStyle = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
     backgroundColor: colors.white,
+    flex: 1,
   },
 
   item: {
-    backgroundColor: colors.inputText,
+    backgroundColor: colors.brown_bright,
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -74,4 +73,33 @@ export const boardStyle = StyleSheet.create({
   title: {
     fontSize: 32,
   },
+});
+
+export const ProfileStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: colors.white,
+  },
+  subContainer: {
+    alignItems:'flex-start',
+  },
+  subText: {
+    paddingLeft: 10,
+    fontSize: 20,
+  },
+
+  text: {
+    fontSize: 20,
+  },
+  smallButton: {
+    backgroundColor: colors.button_accessible,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+    padding: 10,
+    height: 40,
+    borderRadius: 5,
+  }
+
 });

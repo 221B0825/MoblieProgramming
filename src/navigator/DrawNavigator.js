@@ -1,28 +1,33 @@
+//basic
 import React from "react";
 
+//navigation
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import Info from '../screen/InfoBoard';
-import Profile from '../screen/Profile';
+
+//screen
+import InfoScreen from '../screen/InfoBoard';
+import { ProfileStackNavigator } from "./StackNavigator";
+
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+const MainDrawerNavigator = () => {
   return (
     <Drawer.Navigator
         // initialRouteName=""
     >
       <Drawer.Screen
         name="Info"
-        component={Info}
+        component={InfoScreen}
         options={{
           title: '정보 공유 게시판',
-          drawerLabel: '정보 공유 게시판'
+          drawerLabel: '정보 공유 게시판',
           }}
       />
 
       <Drawer.Screen 
-        name="Profile"
-        component={Profile}
+        name="ProfileStack"
+        component={ProfileStackNavigator}
         options={{
           title: '내 프로필',
           drawerLabel: '내 프로필'
@@ -32,4 +37,6 @@ const DrawerNavigator = () => {
   );
 }
 
-export default DrawerNavigator;
+
+
+export { MainDrawerNavigator };
