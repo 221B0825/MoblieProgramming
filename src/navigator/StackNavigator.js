@@ -97,4 +97,50 @@ const StackNavigator = () => {
   );
 }
 
-export { StackNavigator };
+const ProfileStackNavigator = () => {
+  return(
+    <Stack.Navigator
+      initialRouteName='Profile'
+      screenOptions={{ headerShown: false}}>
+        <Stack.Screen 
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            title: "Profile",
+        }}
+      />   
+      
+      <Stack.Screen
+        name="ValidUser"
+        component={ValidUserScreen} 
+        options={{
+          title: "",
+          headerShown: true,
+        }}
+
+      />
+
+      <Stack.Screen
+        name="Withdrawal"
+        component={WithdrawalScreen} 
+        options={{
+          title: "회원 탈퇴",
+          headerShown: true,
+        }}
+
+      />
+
+      <Stack.Screen
+      name="EditProfile"
+      component={EditProfileScreen}
+      options={{
+        title: "",
+        headerShown: false,
+      }}
+      />
+
+    </Stack.Navigator>
+  )
+}
+
+export { StackNavigator, ProfileStackNavigator };
