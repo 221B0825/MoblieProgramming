@@ -155,3 +155,32 @@ export const boardStyle = StyleSheet.create({
     height: 26,
   }
 });
+
+export const ProfileStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: colors.white,
+  },
+  subContainer: {
+    alignItems:'flex-start',
+  },
+  subText: {
+    paddingLeft: 10,
+    fontSize: 20,
+  },
+
+  text: {
+    fontSize: 20,
+  },
+  smallButton: {
+    backgroundColor: colors.button_accessible,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+    padding: 10,
+    height: 40,
+    borderRadius: 5,
+  }
+
+});
