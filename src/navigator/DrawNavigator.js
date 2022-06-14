@@ -1,7 +1,8 @@
 import React from "react";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import Info from '../screen/InfoBoard';
+
+import Board from '../noticeBoard/Board'
 import Profile from '../screen/Profile';
 
 const Drawer = createDrawerNavigator();
@@ -9,25 +10,26 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
-        // initialRouteName=""
+    // initialRouteName=""
     >
+
       <Drawer.Screen
-        name="Info"
-        component={Info}
+        name="Board"
+        component={Board}
         options={{
-          title: '정보 공유 게시판',
-          drawerLabel: '정보 공유 게시판'
-          }}
+          title: '게시판',
+          drawerLabel: '게시판'
+        }}
       />
 
-      <Drawer.Screen 
+      <Drawer.Screen
         name="Profile"
         component={Profile}
         options={{
           title: '내 프로필',
           drawerLabel: '내 프로필'
         }}
-      />    
+      />
     </Drawer.Navigator>
   );
 }
