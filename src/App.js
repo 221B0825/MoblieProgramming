@@ -19,7 +19,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <StatusBar barStyle='dark-content'></StatusBar>
             <NavigationContainer>
-                <StackNavigator />
+                <FirstStackNavigator />
             </NavigationContainer>
         </ThemeProvider>
     );
