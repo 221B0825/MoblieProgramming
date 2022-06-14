@@ -1,9 +1,9 @@
 import React from "react";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { ProfileStackNavigator } from "./StackNavigator";
 
 import Board from '../noticeBoard/Board'
-import Profile from '../screen/Profile';
 
 const Drawer = createDrawerNavigator();
 
@@ -34,4 +34,4 @@ const DrawerNavigator = () => {
   );
 }
 
-export default DrawerNavigator;
+export { MainDrawerNavigator };
