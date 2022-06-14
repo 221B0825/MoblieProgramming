@@ -1,10 +1,10 @@
 //basic
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'react-native';
 
 //style
 import { ThemeProvider } from 'styled-components';
-import {theme} from "./styles";
+import { theme } from "./styles";
 
 //navigation
 import { NavigationContainer } from '@react-navigation/native';
