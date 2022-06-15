@@ -3,9 +3,7 @@ import React from "react";
 
 //navigation
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { ProfileStackNavigator } from "./StackNavigator";
-
-import Board from '../noticeBoard/Board'
+import { ProfileStackNavigator, BoardStackNavigator } from "./StackNavigator";
 
 const Drawer = createDrawerNavigator();
 
@@ -17,7 +15,7 @@ const MainDrawerNavigator = () => {
 
       <Drawer.Screen
         name="Board"
-        component={Board}
+        component={BoardStackNavigator}
         options={{
           title: '게시판',
           drawerLabel: '게시판'

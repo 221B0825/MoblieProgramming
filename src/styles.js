@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { StatusBar } from 'react-native';
 import Styled from 'styled-components';
 
 export const colors = {
@@ -57,32 +56,18 @@ export const basicStyle = StyleSheet.create({
     flexDirection: 'row',
   }
 });
-
+//board 스타일
 export const boardStyle = StyleSheet.create({
   boardContainer: {
     flex: 1,
     alignItems: 'center',
     backgroundColor: colors.white,
-    marginTop: StatusBar.currentHeight,
   },
 
   container: {
     flex: 1,
     alignItems: 'center',
     backgroundColor: colors.white,
-    flex: 1,
-  },
-
-  board: {
-    width: 350,
-    height: 58,
-    alignItems: 'center',
-    top: 0,
-    borderColor: colors.brown_bright,
-    backgroundColor: colors.brown_bright,
-    borderWidth: 2,
-    borderRadius: 10,
-
   },
 
   item: {
@@ -127,16 +112,17 @@ export const boardStyle = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: colors.brown_bright,
     borderColor: colors.brown_bright,
-  },
-
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    marginBottom: 140
   },
 
   boardTitle: {
     marginBottom: 40,
     flexDirection: 'row',
+  },
+
+  title: {
+    flex: 3,
+    alignItems: 'center',
   },
 
   font: {
@@ -151,10 +137,56 @@ export const boardStyle = StyleSheet.create({
   },
 
   arrow: {
-    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
+    flex: 1,
     width: 26,
     height: 26,
+  },
+
+  textInputTitle: {
+    height: 40,
+    width: 300,
+    margin: 0.8,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: colors.inputText,
+  },
+
+  textInputContent: {
+    textAlignVertical: 'top',
+    height: 450,
+    width: 300,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: colors.inputText,
+  },
+
+  button: {
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+    marginLeft: 240,
+    width: 50,
+    height: 20,
+    borderRadius: 20,
+    backgroundColor: colors.brown_bright,
+    borderColor: colors.brown_bright,
+  },
+
+  jobButton: {
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+    marginLeft: 240,
+    width: 80,
+    height: 20,
+    borderRadius: 20,
+    backgroundColor: colors.brown_bright,
+    borderColor: colors.brown_bright,
   }
+
 });
 
 export const ProfileStyle = StyleSheet.create({
@@ -164,7 +196,7 @@ export const ProfileStyle = StyleSheet.create({
     backgroundColor: colors.white,
   },
   subContainer: {
-    alignItems:'flex-start',
+    alignItems: 'flex-start',
   },
   subText: {
     paddingLeft: 10,
@@ -185,3 +217,16 @@ export const ProfileStyle = StyleSheet.create({
   }
 
 });
+
+
+  // board: {
+  //   width: 350,
+  //   height: 58,
+  //   alignItems: 'center',
+  //   top: 0,
+  //   borderColor: colors.brown_bright,
+  //   backgroundColor: colors.brown_bright,
+  //   borderWidth: 2,
+  //   borderRadius: 10,
+
+  // },

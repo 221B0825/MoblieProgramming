@@ -12,12 +12,15 @@ import ProfileScreen from "../screen/Profile";
 import ValidUserScreen from "../screen/ValidUser";
 import WithdrawalScreen from "../screen/Withdrawal";
 import EditProfileScreen from "../screen/EditProfile";
-import NoticeBoard from "../noticeBoard/NoticeBoard"
-import InfoBoard from "../noticeBoard/InfoBoard"
-import QABoard from "../noticeBoard/QABoard"
-import FreeBoard from "../noticeBoard/FreeBoard"
-import UseTradeBoard from "../noticeBoard/UseTradeBoard"
-import JobPostingBoard from "../noticeBoard/JobPostingBoard"
+import NoticeBoard from "../noticeBoard/NoticeBoard";
+import InfoBoard from "../noticeBoard/InfoBoard";
+import QABoard from "../noticeBoard/QABoard";
+import FreeBoard from "../noticeBoard/FreeBoard";
+import UseTradeBoard from "../noticeBoard/UseTradeBoard";
+import JobPostingBoard from "../noticeBoard/JobPostingBoard";
+import Write from "../noticeBoard/write/Write";
+import Board from "../noticeBoard/Board"
+import JobPostingWrite from "../noticeBoard/write/JobPostingWrite"
 
 const Stack = createStackNavigator();
 
@@ -26,31 +29,49 @@ const FirstStackNavigator = () => {
     <Stack.Navigator
       initialRouteName='Login'
       screenOptions={{ headerShown: false }}>
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{
-            title: '',
-          }}
-          />
-        <Stack.Screen
-          name="SignUp"
-          component={SignupScreen}
-          options={{ 
-            title: 'SignUp',
-            headerShown: true
-          }}
-          />
-        <Stack.Screen
-          name="Main"
-          component={MainDrawerNavigator}
-          options={{
-            title: 'Main',
-            
-          }}
-          />
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{
+          title: '',
+        }}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignupScreen}
+        options={{
+          title: 'SignUp',
+          headerShown: true
+        }}
+      />
+      <Stack.Screen
+        name="Main"
+        component={MainDrawerNavigator}
+        options={{
+          title: 'Main',
 
-<Stack.Screen
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+const BoardStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}
+    >
+
+      <Stack.Screen
+        name="Board"
+        component={Board}
+        options={{
+          title: 'Board',
+
+        }}
+      />
+
+      <Stack.Screen
         name="NoticeBoard"
         component={NoticeBoard}
         options={{
@@ -98,34 +119,43 @@ const FirstStackNavigator = () => {
 
         }}
       />
-    </Stack.Navigator>
-  );
-}
+      <Stack.Screen
+        name="Write"
+        component={Write}
+        options={{
+          title: 'Write',
 
-const BoardStackNavigator = () => {
-  return(
-    <Stack.Navigator>
+        }}
+      />
+      <Stack.Screen
+        name="JobPostingWrite"
+        component={JobPostingWrite}
+        options={{
+          title: 'JobPostingWrite',
+
+        }}
+      />
 
     </Stack.Navigator>
   )
 }
 
 const ProfileStackNavigator = () => {
-  return(
+  return (
     <Stack.Navigator
       initialRouteName='Profile'
-      screenOptions={{ headerShown: false}}>
-        <Stack.Screen 
-          name="Profile"
-          component={ProfileScreen}
-          options={{
-            title: "Profile",
+      screenOptions={{ headerShown: false }}>
+      <Stack.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          title: "Profile",
         }}
-      />   
-      
+      />
+
       <Stack.Screen
         name="ValidUser"
-        component={ValidUserScreen} 
+        component={ValidUserScreen}
         options={{
           title: "",
           headerShown: true,
@@ -135,7 +165,7 @@ const ProfileStackNavigator = () => {
 
       <Stack.Screen
         name="Withdrawal"
-        component={WithdrawalScreen} 
+        component={WithdrawalScreen}
         options={{
           title: "회원 탈퇴",
           headerShown: true,
@@ -144,12 +174,12 @@ const ProfileStackNavigator = () => {
       />
 
       <Stack.Screen
-      name="EditProfile"
-      component={EditProfileScreen}
-      options={{
-        title: "",
-        headerShown: false,
-      }}
+        name="EditProfile"
+        component={EditProfileScreen}
+        options={{
+          title: "",
+          headerShown: false,
+        }}
       />
 
     </Stack.Navigator>
