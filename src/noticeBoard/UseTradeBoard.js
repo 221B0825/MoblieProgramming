@@ -25,7 +25,7 @@ const DATA = [
 
 const Item = ({ title }) => (
     <TouchableOpacity style={boardStyle.boardItem}>
-        <Text style={boardStyle.title}>{title}</Text>
+        <Text style={boardStyle.font}>{title}</Text>
     </TouchableOpacity>
 );
 
@@ -40,7 +40,7 @@ const UseTradeBoard = ({ navigation }) => {
         <SafeAreaView style={boardStyle.boardContainer}>
             <View style={boardStyle.boardTitle}>
                 <TouchableOpacity style={boardStyle.arrow}
-                    onPress={() => { navigation.navigate('Main') }}
+                    onPress={() => { navigation.goBack() }}
                 >
                     <Image
                         source={require('../img/left-arrow.png')}
@@ -48,8 +48,10 @@ const UseTradeBoard = ({ navigation }) => {
                     />
                 </TouchableOpacity>
 
+                <View style={boardStyle.title}><Text style={boardStyle.font}>중고 거래 게시판</Text></View>
 
-                <Text style={boardStyle.font}>중고 거래 게시판</Text>
+                <View style={{ flex: 1 }} />
+
             </View>
 
             <FlatList
@@ -58,7 +60,9 @@ const UseTradeBoard = ({ navigation }) => {
                 keyExtractor={item => item.id}
             />
 
-            <TouchableOpacity style={boardStyle.WriteItem}>
+            <TouchableOpacity style={boardStyle.WriteItem}
+                onPress={() => { navigation.navigate('Write') }}
+            >
                 <Text style={boardStyle.fontWrite}>글쓰기</Text>
             </TouchableOpacity>
         </SafeAreaView>

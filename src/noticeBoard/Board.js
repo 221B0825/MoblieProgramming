@@ -5,6 +5,7 @@ import { View, FlatList, Text, SafeAreaView, TouchableOpacity } from 'react-nati
 //style
 
 //navigation
+import { CommonActions } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 
 //style
@@ -76,7 +77,7 @@ const Board = ({ navigation }) => {
                 setBoardTitle(title)
                 setBoard
             }}>
-            <Text style={boardStyle.title}>{title}</Text>
+            <Text style={boardStyle.font}>{title}</Text>
         </TouchableOpacity >
     );
 

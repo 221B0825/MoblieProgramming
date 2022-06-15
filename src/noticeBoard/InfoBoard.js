@@ -1,6 +1,6 @@
 //basic
 import React from 'react';
-import { Image, View, FlatList, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Image, View, FlatList, Text, SafeAreaView, TouchableOpacity, ViewBase } from 'react-native';
 
 //navigation
 import 'react-native-gesture-handler';
@@ -25,7 +25,7 @@ const DATA = [
 
 const Item = ({ title }) => (
   <TouchableOpacity style={boardStyle.boardItem}>
-    <Text style={boardStyle.title}>{title}</Text>
+    <Text style={boardStyle.font}>{title}</Text>
   </TouchableOpacity>
 );
 
@@ -40,7 +40,7 @@ const InfoBoard = ({ navigation }) => {
     <SafeAreaView style={boardStyle.boardContainer}>
       <View style={boardStyle.boardTitle}>
         <TouchableOpacity style={boardStyle.arrow}
-          onPress={() => { navigation.navigate('Main') }}
+          onPress={() => { navigation.goBack() }}
         >
           <Image
             source={require('../img/left-arrow.png')}
@@ -48,8 +48,8 @@ const InfoBoard = ({ navigation }) => {
           />
         </TouchableOpacity>
 
-
-        <Text style={boardStyle.font}>정보 공유 게시판</Text>
+        <View style={boardStyle.title}><Text style={boardStyle.font}>정보 공유 게시판</Text></View>
+        <View style={{ flex: 1 }} />
       </View>
 
       <FlatList
@@ -58,7 +58,9 @@ const InfoBoard = ({ navigation }) => {
         keyExtractor={item => item.id}
       />
 
-      <TouchableOpacity style={boardStyle.WriteItem}>
+      <TouchableOpacity style={boardStyle.WriteItem}
+        onPress={() => { navigation.navigate('Write') }}
+      >
         <Text style={boardStyle.fontWrite}>글쓰기</Text>
       </TouchableOpacity>
     </SafeAreaView>
