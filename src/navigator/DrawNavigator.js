@@ -1,9 +1,9 @@
 //basic
-import React from "react";
+import React from 'react';
 
 //navigation
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { ProfileStackNavigator, BoardStackNavigator } from "./StackNavigator";
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { ProfileStackNavigator, BoardStackNavigator } from './StackNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -12,26 +12,25 @@ const MainDrawerNavigator = () => {
     <Drawer.Navigator
     // initialRouteName=""
     >
-
       <Drawer.Screen
-        name="Board"
+        name="BoardStack"
         component={BoardStackNavigator}
         options={{
           title: '게시판',
-          drawerLabel: '게시판'
+          drawerLabel: '게시판',
         }}
       />
 
       <Drawer.Screen
-        name="Profile"
+        name="ProfileStack"
         component={ProfileStackNavigator}
         options={{
           title: '내 프로필',
-          drawerLabel: '내 프로필'
+          drawerLabel: '내 프로필',
         }}
       />
     </Drawer.Navigator>
   );
-}
+};
 
 export { MainDrawerNavigator };

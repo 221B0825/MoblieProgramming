@@ -1,34 +1,37 @@
 //basic
-import React from "react";
+import React from 'react';
 
 //navigation
-import { createStackNavigator } from "@react-navigation/stack";
-import { MainDrawerNavigator } from "./DrawNavigator";
+import { createStackNavigator } from '@react-navigation/stack';
+import { MainDrawerNavigator } from './DrawNavigator';
 
 //screens
-import LoginScreen from "../screen/Login";
-import SignupScreen from "../screen/SignUp";
-import ProfileScreen from "../screen/Profile";
-import ValidUserScreen from "../screen/ValidUser";
-import WithdrawalScreen from "../screen/Withdrawal";
-import EditProfileScreen from "../screen/EditProfile";
-import NoticeBoard from "../noticeBoard/NoticeBoard";
-import InfoBoard from "../noticeBoard/InfoBoard";
-import QABoard from "../noticeBoard/QABoard";
-import FreeBoard from "../noticeBoard/FreeBoard";
-import UseTradeBoard from "../noticeBoard/UseTradeBoard";
-import JobPostingBoard from "../noticeBoard/JobPostingBoard";
-import Write from "../noticeBoard/write/Write";
-import Board from "../noticeBoard/Board"
-import JobPostingWrite from "../noticeBoard/write/JobPostingWrite"
+import LoginScreen from '../screen/Login';
+import SignupScreen from '../screen/SignUp';
+import ProfileScreen from '../screen/Profile';
+import ValidUserScreen from '../screen/ValidUser';
+import WithdrawalScreen from '../screen/Withdrawal';
+import EditProfileScreen from '../screen/EditProfile';
+import NoticeBoard from '../board/NoticeBoard';
+import InfoBoard from '../board/InfoBoard';
+import QABoard from '../board/QABoard';
+import FreeBoard from '../board/FreeBoard';
+import UseTradeBoard from '../board/UseTradeBoard';
+import JobPostingBoard from '../board/JobPostingBoard';
+import Write from '../board/write/Write';
+import Board from '../board/Board';
+import JobPostingWrite from '../board/write/JobPostingWrite';
+
+import ShowPost from '../board/post/ShowPost';
 
 const Stack = createStackNavigator();
 
 const FirstStackNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName='Login'
-      screenOptions={{ headerShown: false }}>
+      initialRouteName="Login"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen
         name="Login"
         component={LoginScreen}
@@ -41,7 +44,7 @@ const FirstStackNavigator = () => {
         component={SignupScreen}
         options={{
           title: 'SignUp',
-          headerShown: true
+          headerShown: true,
         }}
       />
       <Stack.Screen
@@ -49,25 +52,21 @@ const FirstStackNavigator = () => {
         component={MainDrawerNavigator}
         options={{
           title: 'Main',
-
         }}
       />
     </Stack.Navigator>
   );
-}
+};
 
 const BoardStackNavigator = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false }}
-    >
-
+    <Stack.Navigator initialRouteName="Board">
       <Stack.Screen
         name="Board"
         component={Board}
         options={{
-          title: 'Board',
-
+          title: '',
+          headerShown: false,
         }}
       />
 
@@ -75,48 +74,42 @@ const BoardStackNavigator = () => {
         name="NoticeBoard"
         component={NoticeBoard}
         options={{
-          title: 'NoticeBoard',
-
+          title: '정부기관 공지 게시판',
         }}
       />
       <Stack.Screen
         name="InfoBoard"
         component={InfoBoard}
         options={{
-          title: 'FreeBoard',
-
+          title: '정보 공유 게시판',
         }}
       />
       <Stack.Screen
         name="QABoard"
         component={QABoard}
         options={{
-          title: 'QABoard',
-
+          title: 'Q&A 게시판',
         }}
       />
       <Stack.Screen
         name="FreeBoard"
         component={FreeBoard}
         options={{
-          title: 'FreeBoard',
-
+          title: '자유게시판',
         }}
       />
       <Stack.Screen
         name="UseTradeBoard"
         component={UseTradeBoard}
         options={{
-          title: 'UseTradeBoard',
-
+          title: '중고 거래 게시판',
         }}
       />
       <Stack.Screen
         name="JobPostingBoard"
         component={JobPostingBoard}
         options={{
-          title: 'JobPostingBoard',
-
+          title: '구인 공고 게시판',
         }}
       />
       <Stack.Screen
@@ -124,7 +117,6 @@ const BoardStackNavigator = () => {
         component={Write}
         options={{
           title: 'Write',
-
         }}
       />
       <Stack.Screen
@@ -132,24 +124,30 @@ const BoardStackNavigator = () => {
         component={JobPostingWrite}
         options={{
           title: 'JobPostingWrite',
-
         }}
       />
-
+      <Stack.Screen
+        name="ShowPost"
+        component={ShowPost}
+        options={{
+          title: '게시글 제목',
+        }}
+      />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 const ProfileStackNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName='Profile'
-      screenOptions={{ headerShown: false }}>
+      initialRouteName="Profile"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
-          title: "Profile",
+          title: 'Profile',
         }}
       />
 
@@ -157,33 +155,30 @@ const ProfileStackNavigator = () => {
         name="ValidUser"
         component={ValidUserScreen}
         options={{
-          title: "",
+          title: '',
           headerShown: true,
         }}
-
       />
 
       <Stack.Screen
         name="Withdrawal"
         component={WithdrawalScreen}
         options={{
-          title: "회원 탈퇴",
+          title: '',
           headerShown: true,
         }}
-
       />
 
       <Stack.Screen
         name="EditProfile"
         component={EditProfileScreen}
         options={{
-          title: "",
+          title: '',
           headerShown: false,
         }}
       />
-
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 export { FirstStackNavigator, ProfileStackNavigator, BoardStackNavigator };

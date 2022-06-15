@@ -10,12 +10,13 @@ export const colors = {
   button_Inaccessible: '#A3A2A0',
   brown_bright: '#F0BDA3',
   brown_dark: '#706F6E',
-}
+  dropDown: '#FDDDBD',
+};
 
 export const theme = {
   background: colors.white,
   text: colors.black,
-}
+};
 
 export const basicStyle = StyleSheet.create({
   container: {
@@ -34,7 +35,7 @@ export const basicStyle = StyleSheet.create({
   },
   text: {
     margin: 30,
-    fontSize: 30
+    fontSize: 30,
   },
   button: {
     backgroundColor: colors.button_accessible,
@@ -49,13 +50,14 @@ export const basicStyle = StyleSheet.create({
     color: colors.white,
   },
   errorText: {
-    fontSize: 20,
+    fontSize: 15,
     color: colors.red,
   },
   row: {
     flexDirection: 'row',
-  }
+  },
 });
+
 //board 스타일
 export const boardStyle = StyleSheet.create({
   boardContainer: {
@@ -83,7 +85,7 @@ export const boardStyle = StyleSheet.create({
     borderWidth: 3,
     borderRadius: 10,
     backgroundColor: colors.brown_bright,
-    borderColor: colors.brown_bright
+    borderColor: colors.brown_bright,
   },
 
   boardItem: {
@@ -99,7 +101,7 @@ export const boardStyle = StyleSheet.create({
     borderWidth: 3,
     borderRadius: 10,
     backgroundColor: colors.brown_bright,
-    borderColor: colors.brown_bright
+    borderColor: colors.brown_bright,
   },
 
   WriteItem: {
@@ -112,7 +114,7 @@ export const boardStyle = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: colors.brown_bright,
     borderColor: colors.brown_bright,
-    marginBottom: 140
+    marginBottom: 140,
   },
 
   boardTitle: {
@@ -185,8 +187,7 @@ export const boardStyle = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: colors.brown_bright,
     borderColor: colors.brown_bright,
-  }
-
+  },
 });
 
 export const ProfileStyle = StyleSheet.create({
@@ -202,6 +203,14 @@ export const ProfileStyle = StyleSheet.create({
     paddingLeft: 10,
     fontSize: 20,
   },
+  showText: {
+    height: 40,
+    width: 300,
+    margin: 12,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: colors.inputText,
+  },
 
   text: {
     fontSize: 20,
@@ -214,19 +223,62 @@ export const ProfileStyle = StyleSheet.create({
     padding: 10,
     height: 40,
     borderRadius: 5,
-  }
+  },
 
+  button: {
+    backgroundColor: colors.button_accessible,
+    margin: 10,
+    padding: 10,
+    paddingHorizontal: 40,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
 });
 
-
-  // board: {
-  //   width: 350,
-  //   height: 58,
-  //   alignItems: 'center',
-  //   top: 0,
-  //   borderColor: colors.brown_bright,
-  //   backgroundColor: colors.brown_bright,
-  //   borderWidth: 2,
-  //   borderRadius: 10,
-
-  // },
+export const postStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  line: {
+    borderColor: colors.black,
+    borderBottomWidth: 1,
+    marginHorizontal: 10,
+  },
+  name: {
+    backgroundColor: colors.inputText,
+    flex: 1,
+    borderRadius: 10,
+    margin: 10,
+    padding: 10,
+    fontSize: 20,
+  },
+  body: {
+    backgroundColor: colors.inputText,
+    flex: 15,
+    borderRadius: 10,
+    margin: 10,
+    padding: 10,
+  },
+  smallButton: {
+    backgroundColor: colors.button_accessible,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 5,
+    padding: 10,
+    borderRadius: 5,
+  },
+  rightRow: {
+    margin: 5,
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+  },
+  text: {
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    fontSize: 18,
+  },
+  textInput: {
+    backgroundColor: colors.brown_bright,
+    width: 200,
+  },
+});
