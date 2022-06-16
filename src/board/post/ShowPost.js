@@ -21,9 +21,11 @@ const ShowPost = ({ navigation }) => {
   return (
     <SafeAreaView style={postStyle.container}>
       <Text style={postStyle.name}>작성자: 홍길동</Text>
-      <Text multiline numberOfLines={10} style={postStyle.body}>
-        독일 어딘가에 거주하고 있는 학생입니다! 앞으로 잘 부탁드립니다!
-      </Text>
+      <View style={postStyle.body}>
+        <Text multiline numberOfLines={10} >
+          독일 어딘가에 거주하고 있는 학생입니다! 앞으로 잘 부탁드립니다!
+        </Text>
+      </View>
 
       <SafeAreaView style={postStyle.rightRow}>
         <TouchableOpacity style={postStyle.smallButton}>
@@ -55,7 +57,7 @@ const ShowPost = ({ navigation }) => {
       </ScrollView>
       <SafeAreaView style={basicStyle.row}>
         <TextInput style={basicStyle.textInput}>댓글을 입력하세요</TextInput>
-        <TouchableOpacity style={postStyle.smallButton}>
+        <TouchableOpacity style={postStyle.submitButton}>
           <Text style={basicStyle.buttonText}>입력</Text>
         </TouchableOpacity>
       </SafeAreaView>

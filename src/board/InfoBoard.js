@@ -31,13 +31,17 @@ const DATA = [
   },
 ];
 
-const Item = ({ title }) => (
-  <TouchableOpacity style={boardStyle.boardItem}>
-    <Text style={boardStyle.font}>{title}</Text>
-  </TouchableOpacity>
-);
+
 
 const InfoBoard = ({ navigation }) => {
+  const Item = ({ title }) => (
+    <TouchableOpacity style={boardStyle.boardItem} onPress={() => {
+      navigation.navigate('ShowPost');
+    }}>
+      <Text style={boardStyle.font}>{title}</Text>
+    </TouchableOpacity>
+  );
+
   const renderItem = ({ item }) => <Item title={item.title} />;
 
   return (
