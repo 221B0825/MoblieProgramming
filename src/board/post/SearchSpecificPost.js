@@ -50,10 +50,41 @@ const SearchSpecificPost = () => {
 
   return (
     <SafeAreaView style={postStyle.container}>
-      <SafeAreaView style={basicStyle.row}>
+      <SafeAreaView
+        style={[
+          basicStyle.row,
+          {
+            justifyContent: 'center',
+          },
+        ]}
+      >
+        <TextInput
+          style={[
+            postStyle.textInput,
+            {
+              margin: 10,
+              padding: 10,
+            },
+          ]}
+          placeholder="검색어 입력..."
+        ></TextInput>
+        <TouchableOpacity style={postStyle.smallButton}>
+          <Text>검색</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+
+      <SafeAreaView
+        style={[
+          basicStyle.row,
+          {
+            justifyContent: 'center',
+          },
+        ]}
+      >
         <DropDownPicker
           containerStyle={{
             width: 150,
+            margin: 5,
           }}
           open={categoryOpen}
           onOpen={onCategoryOpen}
@@ -67,6 +98,7 @@ const SearchSpecificPost = () => {
         <DropDownPicker
           containerStyle={{
             width: 100,
+            margin: 5,
           }}
           open={typeOpen}
           onOpen={onTypeOpen}
@@ -76,15 +108,6 @@ const SearchSpecificPost = () => {
           setValue={setTypeValue}
           setItems={setTypeItems}
         />
-      </SafeAreaView>
-      <SafeAreaView style={basicStyle.row}>
-        <TextInput
-          style={postStyle.textInput}
-          placeholder="검색어 입력..."
-        ></TextInput>
-        <TouchableOpacity style={postStyle.smallButton}>
-          <Text>검색</Text>
-        </TouchableOpacity>
       </SafeAreaView>
     </SafeAreaView>
   );

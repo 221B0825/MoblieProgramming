@@ -23,6 +23,8 @@ import Board from '../board/Board';
 import JobPostingWrite from '../board/write/JobPostingWrite';
 
 import ShowPost from '../board/post/ShowPost';
+import SearchPost from '../board/post/SearchPost';
+import SearchSpecificPost from '../board/post/SearchSpecificPost';
 
 const Stack = createStackNavigator();
 
@@ -131,6 +133,20 @@ const BoardStackNavigator = () => {
         component={ShowPost}
         options={{
           title: '게시글 제목',
+        }}
+      />
+      <Stack.Screen
+        name="SearchPost"
+        component={SearchPost}
+        options={{
+          title: '전체 게시판 검색',
+        }}
+      />
+      <Stack.Screen
+        name="SearchSpecificPost"
+        component={SearchSpecificPost}
+        options={{
+          title: '특정 게시판 검색',
         }}
       />
     </Stack.Navigator>

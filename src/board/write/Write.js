@@ -7,10 +7,12 @@ import {
   TextInput,
   SafeAreaView,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 
 //navigation
 import 'react-native-gesture-handler';
+import { CommonActions } from '@react-navigation/native';
 
 //style
 import { boardStyle } from '../../styles';

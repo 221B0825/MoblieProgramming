@@ -22,7 +22,7 @@ const ShowPost = ({ navigation }) => {
     <SafeAreaView style={postStyle.container}>
       <Text style={postStyle.name}>작성자: 홍길동</Text>
       <View style={postStyle.body}>
-        <Text multiline numberOfLines={10} >
+        <Text multiline numberOfLines={10}>
           독일 어딘가에 거주하고 있는 학생입니다! 앞으로 잘 부탁드립니다!
         </Text>
       </View>
