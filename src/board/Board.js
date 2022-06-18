@@ -100,27 +100,22 @@ const Board = ({ navigation }) => {
 
       case '정보 공유 게시판':
         navigation.navigate('InfoBoard');
-        console.log('이동2');
         break;
 
       case 'Q&A 게시판':
         navigation.navigate('QABoard');
-        console.log('이동3');
         break;
 
       case '자유게시판':
         navigation.navigate('FreeBoard');
-        console.log('이동4');
         break;
 
       case '중고 거래 게시판':
         navigation.navigate('UseTradeBoard');
-        console.log('이동5');
         break;
 
       case '구인 공고 게시판':
         navigation.navigate('JobPostingBoard');
-        console.log('이동6');
         break;
 
       case '전체 게시판 검색':

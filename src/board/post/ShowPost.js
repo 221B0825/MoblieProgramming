@@ -26,7 +26,6 @@ const ShowPost = ({ navigation }) => {
           독일 어딘가에 거주하고 있는 학생입니다! 앞으로 잘 부탁드립니다!
         </Text>
       </View>
-
       <SafeAreaView style={postStyle.rightRow}>
         <TouchableOpacity style={postStyle.smallButton}>
           <Text style={basicStyle.buttonText}>수정</Text>
