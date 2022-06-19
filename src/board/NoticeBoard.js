@@ -18,15 +18,15 @@ import { boardStyle } from '../styles';
 const DATA = [
   {
     id: '1',
-    title: '게시물 1',
+    title: '개선된 비자 재공지(22년 5월)',
   },
   {
     id: '2',
-    title: '게시물 2',
+    title: '개선된 비자 공지(22년 5월)',
   },
   {
     id: '3',
-    title: '게시물 3',
+    title: '완화된 입국 규정(22년 4월)',
   },
 ];
 
@@ -44,7 +44,7 @@ const NoticeBoard = ({ navigation }) => {
       <FlatList
         data={DATA}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
       />
 
       <TouchableOpacity

@@ -18,15 +18,15 @@ import { boardStyle } from '../styles';
 const DATA = [
   {
     id: '1',
-    title: '게시물 1',
+    title: '자취방 양도(풀옵션, 보증금 있음)',
   },
   {
     id: '2',
-    title: '게시물 2',
+    title: '직접 재배한 깻잎 판매합니다!',
   },
   {
     id: '3',
-    title: '게시물 3',
+    title: '휴대폰 아무거나 삽니다(급함)',
   },
 ];
 
@@ -44,7 +44,7 @@ const UseTradeBoard = ({ navigation }) => {
       <FlatList
         data={DATA}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
       />
 
       <TouchableOpacity

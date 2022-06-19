@@ -1,6 +1,7 @@
 //basic
-import React, { useState } from 'react';
-import { StatusBar } from 'react-native';
+import React, { useEffect } from 'react';
+import { LogBox, StatusBar } from 'react-native';
+LogBox.ignoreLogs(['Require cycle:']);
 
 //style
 import { ThemeProvider } from 'styled-components';
